@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impulse-X | Reto F1025</title>
+    <!-- Cargamos Tailwind CSS para estilos rápidos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Cargamos una fuente moderna y técnica de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Configuración personalizada de colores en Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'negro-espacial': '#000000',
+                        'rojo-impulso': '#E91D0A',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos adicionales personalizados */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            background-image: radial-gradient(circle at center, #111111 0%, #000000 100%);
+        }
+        
+        /* Animación suave para el contenedor principal */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 font-sans text-center">
+
+    <div class="w-full max-w-4xl flex flex-col items-center fade-in">
+        
+        <!-- 1. Header con el Logo -->
+        <header class="mb-12 w-full flex justify-center mt-8">
+            <!-- Cargando tu logo exactamente con el nombre proporcionado -->
+            <img src="Impulse-X_logo_horizontal_fondo_oscuro.png" alt="Logo Impulse-X" 
+                 class="w-[280px] sm:w-[400px] md:w-[600px] h-auto object-contain drop-shadow-[0_0_25px_rgba(233,29,10,0.3)]">
+        </header>
+
+        <!-- 2. Título Principal -->
+        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tight mb-2">
+            Reto F1025 <br/>
+            <span class="text-rojo-impulso">Impulse-X</span>
+        </h1>
+
+        <!-- 3. Leyenda destacada -->
+        <h2 class="text-xl md:text-2xl font-bold uppercase tracking-widest text-gray-400 mt-6 mb-12 relative inline-block">
+            Lanzamientos por venir
+            <!-- Línea decorativa roja -->
+            <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-1/2 h-1 bg-rojo-impulso rounded-full"></div>
+        </h2>
+
+        <!-- 4. Contador de Cuenta Regresiva -->
+        <div class="flex justify-center gap-3 md:gap-6 mb-6">
+            <!-- Días -->
+            <div class="flex flex-col items-center p-3 md:p-5 bg-gray-900 rounded-xl border border-gray-800 shadow-lg min-w-[70px] md:min-w-[100px]">
+                <span id="days" class="text-4xl md:text-5xl font-black text-rojo-impulso">00</span>
+                <span class="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 mt-2 font-bold">Días</span>
+            </div>
+            <!-- Horas -->
+            <div class="flex flex-col items-center p-3 md:p-5 bg-gray-900 rounded-xl border border-gray-800 shadow-lg min-w-[70px] md:min-w-[100px]">
+                <span id="hours" class="text-4xl md:text-5xl font-black text-white">00</span>
+                <span class="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 mt-2 font-bold">Horas</span>
+            </div>
+            <!-- Minutos -->
+            <div class="flex flex-col items-center p-3 md:p-5 bg-gray-900 rounded-xl border border-gray-800 shadow-lg min-w-[70px] md:min-w-[100px]">
+                <span id="minutes" class="text-4xl md:text-5xl font-black text-white">00</span>
+                <span class="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 mt-2 font-bold">Minutos</span>
+            </div>
+            <!-- Segundos -->
+            <div class="flex flex-col items-center p-3 md:p-5 bg-gray-900 rounded-xl border border-gray-800 shadow-lg min-w-[70px] md:min-w-[100px]">
+                <span id="seconds" class="text-4xl md:text-5xl font-black text-rojo-impulso">00</span>
+                <span class="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 mt-2 font-bold">Segundos</span>
+            </div>
+        </div>
+
+        <!-- 5. Texto justo debajo del contador -->
+        <p class="text-lg md:text-xl font-light italic text-gray-300 mb-16 tracking-wide">
+            el lanzamiento espera
+        </p>
+
+        <!-- 6. Sección reservada para los Resultados -->
+        <section class="w-full md:w-3/4 mx-auto p-8 rounded-2xl border-2 border-dashed border-gray-800 bg-gray-900/40 relative overflow-hidden group hover:border-rojo-impulso transition-colors duration-300">
+            <!-- Elemento decorativo de fondo -->
+            <div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-rojo-impulso rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+            
+            <h3 class="text-2xl font-bold mb-3 uppercase tracking-wide">Resultados del Reto F1025</h3>
+            <p class="text-gray-400 font-light leading-relaxed mb-6">
+                Este espacio está reservado para documentar los datos, métricas y el éxito de nuestra misión una vez concluida.
+            </p>
+            <div class="inline-block px-6 py-2 bg-rojo-impulso/20 text-rojo-impulso border border-rojo-impulso rounded-full font-bold uppercase text-sm tracking-wider shadow-[0_0_15px_rgba(233,29,10,0.3)]">
+                Próximamente
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Script para el contador regresivo -->
+    <script>
+        // Establecemos la fecha de lanzamiento (30 días en el futuro desde el momento en que se abre la página por primera vez, o puedes fijar una fecha específica)
+        // Para fijar una fecha exacta, cambia esto a: const launchDate = new Date('2024-12-01T10:00:00').getTime();
+        
+        const currentDate = new Date();
+        const launchDate = new Date(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000)).getTime(); // +30 días
+
+        // Actualizar el contador cada 1 segundo
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            // Cálculos matemáticos para días, horas, minutos y segundos
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Mostrar el resultado en los elementos correspondientes (asegurando siempre 2 dígitos)
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+            // Si la cuenta regresiva termina, mostrar un mensaje
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+                // Opcional: Cambiar texto al llegar a cero
+                // document.querySelector("p.italic").innerHTML = "¡DESPEGUE!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
